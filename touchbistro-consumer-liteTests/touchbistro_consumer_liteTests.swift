@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import touchbistro_consumer_lite
 
 class touchbistro_consumer_liteTests: XCTestCase {
     
