@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="touchbistro_consumer_lite" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="mapView" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ida-5k-xpJ" userLabel="mapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9tq-Bc-pw2"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ida-5k-xpJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1cj-Tx-dFJ"/>
+                            <constraint firstItem="Ida-5k-xpJ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Ap6-7k-PUM"/>
+                            <constraint firstAttribute="trailing" secondItem="Ida-5k-xpJ" secondAttribute="trailing" id="XsU-ul-FZj"/>
+                            <constraint firstItem="Ida-5k-xpJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="quO-9n-ZJR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Ida-5k-xpJ" id="M7f-ZV-h2c"/>
+                        <outlet property="searchDisplayController" destination="uyV-Py-oAc" id="4uC-Tz-A1D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="uyV-Py-oAc">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="V7z-8d-N7X"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="mQ0-Ia-TfC"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="c1X-ik-qbq"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="rei-3N-ZYZ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

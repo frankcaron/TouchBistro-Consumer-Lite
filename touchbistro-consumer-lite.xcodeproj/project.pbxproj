@@ -14,6 +14,8 @@
 		2247C3571E5E814900D51C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247C3551E5E814900D51C05 /* LaunchScreen.storyboard */; };
 		2247C3621E5E814900D51C05 /* touchbistro_consumer_liteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247C3611E5E814900D51C05 /* touchbistro_consumer_liteTests.swift */; };
 		2247C36D1E5E814900D51C05 /* touchbistro_consumer_liteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247C36C1E5E814900D51C05 /* touchbistro_consumer_liteUITests.swift */; };
+		2247C37C1E5E828500D51C05 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2247C37B1E5E828500D51C05 /* MapKit.framework */; };
+		22C6BDBC1E816AE400DB0F6A /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6BDBB1E816AE400DB0F6A /* MyAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2247C3681E5E814900D51C05 /* touchbistro-consumer-liteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "touchbistro-consumer-liteUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2247C36C1E5E814900D51C05 /* touchbistro_consumer_liteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = touchbistro_consumer_liteUITests.swift; sourceTree = "<group>"; };
 		2247C36E1E5E814900D51C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2247C37B1E5E828500D51C05 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22C6BDBB1E816AE400DB0F6A /* MyAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2247C37C1E5E828500D51C05 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,7 @@
 				2247C3601E5E814900D51C05 /* touchbistro-consumer-liteTests */,
 				2247C36B1E5E814900D51C05 /* touchbistro-consumer-liteUITests */,
 				2247C34A1E5E814900D51C05 /* Products */,
+				2247C37A1E5E828500D51C05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +103,7 @@
 		2247C34B1E5E814900D51C05 /* touchbistro-consumer-lite */ = {
 			isa = PBXGroup;
 			children = (
+				22C6BDBB1E816AE400DB0F6A /* MyAnnotation.swift */,
 				2247C34C1E5E814900D51C05 /* AppDelegate.swift */,
 				2247C34E1E5E814900D51C05 /* ViewController.swift */,
 				2247C3501E5E814900D51C05 /* Main.storyboard */,
@@ -123,6 +130,14 @@
 				2247C36E1E5E814900D51C05 /* Info.plist */,
 			);
 			path = "touchbistro-consumer-liteUITests";
+			sourceTree = "<group>";
+		};
+		2247C37A1E5E828500D51C05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2247C37B1E5E828500D51C05 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +209,11 @@
 					2247C3481E5E814800D51C05 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2247C35C1E5E814900D51C05 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -261,6 +281,7 @@
 			files = (
 				2247C34F1E5E814900D51C05 /* ViewController.swift in Sources */,
 				2247C34D1E5E814900D51C05 /* AppDelegate.swift in Sources */,
+				22C6BDBC1E816AE400DB0F6A /* MyAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +526,7 @@
 				2247C3731E5E814900D51C05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2247C3741E5E814900D51C05 /* Build configuration list for PBXNativeTarget "touchbistro-consumer-liteTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +535,7 @@
 				2247C3761E5E814900D51C05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2247C3771E5E814900D51C05 /* Build configuration list for PBXNativeTarget "touchbistro-consumer-liteUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +544,7 @@
 				2247C3791E5E814900D51C05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
