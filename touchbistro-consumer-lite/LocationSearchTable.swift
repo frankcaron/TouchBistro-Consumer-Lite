@@ -68,7 +68,14 @@ extension LocationSearchTable : UISearchResultsUpdating {
         }
         
         let resultPredicate = NSPredicate(format: "SELF like[c] %@", searchBarText)
-        let filteredAnnotations = mapView.annotations.filter { ($0.title != nil) && (resultPredicate.evaluate(with:$0.title) || isEqual(searchBarText)) }
+        print("SearchBarText: " + searchBarText)
+        //let filteredAnnotations = mapView.annotations.filter { ($0.title != nil) && (resultPredicate.evaluate(with:$0.title) || isEqual(searchBarText)) }
+        let filteredAnnotations = mapView.annotations.filter {annotation in
+            return (annotation.title??.localizedCaseInsensitiveContains(searchBarText) ?? false) ||
+                (annotation.subtitle??.localizedCaseInsensitiveContains(searchBarText) ?? false)
+        }
+        
+        print("filteredAnnotations: " + String(filteredAnnotations.count))
         
         if (searchBarText != "") {
             mapView.removeAnnotations(mapView.annotations)
@@ -86,13 +93,18 @@ extension LocationSearchTable {
         return matchingItems.count
     }
     
+      /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+     
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedItem = matchingItems[indexPath.row]
         cell.textLabel?.text = selectedItem.title!
         cell.detailTextLabel?.text = selectedItem.subtitle!
         return cell
-    }
+ 
+    } */
 }
 
 extension LocationSearchTable {
